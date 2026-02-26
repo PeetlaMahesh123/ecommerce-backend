@@ -1,10 +1,10 @@
-FROM eclipse-temurin:17-jdk
+FROM maven:3.9.9-eclipse-temurin-17
 
 WORKDIR /app
 
 COPY . .
 
-RUN ./mvnw clean install -DskipTests
+RUN mvn clean install -DskipTests
 
 EXPOSE 8080
 
